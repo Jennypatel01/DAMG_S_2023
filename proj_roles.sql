@@ -33,7 +33,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Actor TO content_manager;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Director TO content_manager;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Show TO content_manager;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Show_Prov TO content_manager;
-GRANT SELECT, INSERT, UPDATE, DELETE ON Direct_Type TO content_manager;
+GRANT SELECT, INSERT, UPDATE, DELETE ON Direct TO content_manager;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Type TO content_manager;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Genre TO content_manager;
 GRANT SELECT ON Provider TO content_manager;
