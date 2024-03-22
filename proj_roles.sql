@@ -1,4 +1,6 @@
+
 --admin
+
 CREATE USER app_admin IDENTIFIED BY Jennpateadmin150102#;
 GRANT CREATE SESSION TO app_admin;
 ALTER USER app_admin DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
