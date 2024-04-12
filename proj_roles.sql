@@ -1,4 +1,3 @@
-
 --user
 GRANT SELECT ON Shows TO reg_use;
 GRANT SELECT ON Director TO reg_use;
@@ -38,11 +37,5 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Genre TO cont_man;
 GRANT SELECT ON Provider TO cont_man;
 GRANT SELECT ON Subscriptionu TO cont_man;
 GRANT EXECUTE ON show_management_pkg TO cont_man;
-
-
---DROP user cont_man;
---DROP user tran_man;
---DROP user reg_use;
-
-
-
+GRANT SELECT ON regional_age_preferences TO cont_man;
+GRANT SELECT ON subscription_peak_periods_extended TO cont_man;
