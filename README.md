@@ -20,7 +20,7 @@ GRANT SELECT ANY TABLE TO app_admin;
 
 
 Step 2. 
-Run Project3.1-DML_DDL_FIXED.sql and project3 views final.sql  in app_admin
+Run Project-DML_DDL.sql in app_admin
 
 
 Step 3. 
