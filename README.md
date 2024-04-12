@@ -23,9 +23,6 @@ Step 2.
 Run Project3.1-DML_DDL_FIXED.sql and project3 views final.sql  in app_admin
 
 
-
-
-
-P.S.
-proj_roles.sql  consists of different roles and grants for users.
+Step 3. 
+For Inserting USERS, Copy and Paste the proj_roles.sql file into the app_admin file and then make users accordingly.
 
