@@ -1,50 +1,33 @@
 
---admin
-
-CREATE USER app_admin IDENTIFIED BY Jennpateadmin150102#;
-GRANT CREATE SESSION TO app_admin;
-ALTER USER app_admin DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
-ALTER USER app_admin TEMPORARY TABLESPACE TEMP;
-
-GRANT CONNECT TO app_admin;
-GRANT CREATE PROCEDURE TO app_admin;
-GRANT DROP ANY TABLE TO app_admin;
-
-GRANT CREATE ANY TABLE, ALTER ANY TABLE, DROP ANY TABLE TO app_admin;
-GRANT EXECUTE ON check_table_exists TO app_admin;
-GRANT GRANT ANY OBJECT PRIVILEGE, CREATE ANY TABLE, DROP ANY TABLE, ALTER ANY TABLE TO admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ACT TO app_admin;
-
-GRANT CREATE VIEW TO app_admin;
-GRANT DROP ANY VIEW TO app_admin;
-
-GRANT SELECT ANY TABLE TO app_admin;
+--user
+GRANT SELECT ON Shows TO reg_use;
+GRANT SELECT ON Director TO reg_use;
+GRANT SELECT ON Actor TO reg_use;
+GRANT SELECT ON Genre TO reg_use;
+GRANT SELECT ON Type TO reg_use;
+GRANT EXECUTE ON app_admin.update_customer_profile TO reg_use;
+GRANT EXECUTE ON app_admin.insert_new_customer TO reg_use;
+GRANT EXECUTE ON app_admin.InsertActorRating TO reg_use;
+GRANT EXECUTE ON app_admin.InsertDirectorRating TO reg_use;
+GRANT EXECUTE ON app_admin.InsertGenreRating TO reg_use;
+GRANT EXECUTE ON app_admin.InsertProviderRating TO reg_use;
+GRANT EXECUTE ON app_admin.InsertShowRating TO reg_use;
+GRANT EXECUTE ON app_admin.get_popular_shows TO reg_use;
+GRANT EXECUTE ON app_admin.PurchaseSubscriptionPlan TO reg_use;
+GRANT SELECT ON combined_affection_ratings TO reg_use;
 
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON ACT to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON ACTOR to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON DIRECT to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON DIRECTOR to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON GENRE to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON PROVIDER to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON SHOWS to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON SHOW_PROV to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON SUBSCRIPTIONU to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON TRANSACTIONU to app_admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON customer to app_admin;
+--transaction_manager
+GRANT SELECT ON Transactionu TO tran_man;
+GRANT SELECT ON Subscriptionu TO tran_man;
+GRANT SELECT ON Shows TO tran_man;
+GRANT SELECT ON customer TO tran_man;
+GRANT EXECUTE ON handle_subscription_action TO tran_man;
+GRANT SELECT ON view_subscription_info TO tran_man;
+GRANT SELECT ON view_provider_annual_income TO tran_man;
 
-GRANT GRANT ANY OBJECT PRIVILEGE TO admin;
-GRANT CREATE ANY TABLE TO admin;
-GRANT DROP ANY TABLE TO admin;
-GRANT ALTER ANY TABLE TO admin;
 
---Content_Manager user
-CREATE USER cont_man IDENTIFIED BY Jennpatecm150102#;
-GRANT CREATE SESSION TO cont_man;
-ALTER USER cont_man DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
-ALTER USER cont_man TEMPORARY TABLESPACE TEMP;
-GRANT CONNECT TO cont_man;
-
+--Content Manager
 GRANT SELECT, INSERT, UPDATE, DELETE ON Actor TO cont_man;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Director TO cont_man;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Shows TO cont_man;
@@ -54,53 +37,10 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON Type TO cont_man;
 GRANT SELECT, INSERT, UPDATE, DELETE ON Genre TO cont_man;
 GRANT SELECT ON Provider TO cont_man;
 GRANT SELECT ON Subscriptionu TO cont_man;
+GRANT EXECUTE ON show_management_pkg TO cont_man;
 
 
---Subscription_Manager user
-CREATE USER Sub_Man IDENTIFIED BY Jennpatesm150102#;
-GRANT CREATE SESSION TO Sub_Man;
-ALTER USER Sub_Man DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
-ALTER USER Sub_Man TEMPORARY TABLESPACE TEMP;
-GRANT CONNECT TO Sub_Man;
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON Provider TO Sub_Man;
-GRANT SELECT, INSERT, UPDATE, DELETE ON Subscriptionu TO Sub_Man;
-GRANT SELECT, INSERT, UPDATE, DELETE ON Type TO Sub_Man;
-GRANT SELECT ON Shows TO Sub_Man;
-GRANT SELECT ON Show_Prov TO Sub_Man;
-
-
--- Transaction_Manager user
-CREATE USER tran_man IDENTIFIED BY Jennpatetm150102#;
-GRANT CREATE SESSION TO tran_man;
-ALTER USER tran_man DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
-ALTER USER tran_man TEMPORARY TABLESPACE TEMP;
-GRANT CONNECT TO tran_man;
-
-GRANT SELECT ON Transactionu TO tran_man;
-GRANT SELECT ON Subscriptionu TO tran_man;
-GRANT SELECT ON Shows TO tran_man;
-GRANT SELECT ON customer TO tran_man;
-
-
---User user
-CREATE USER reg_use IDENTIFIED BY Jennpateu150102#;
-GRANT CREATE SESSION TO reg_use;
-ALTER USER reg_use DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
-ALTER USER reg_use TEMPORARY TABLESPACE TEMP;
-GRANT CONNECT TO reg_use;
-
-GRANT SELECT ON Shows TO reg_use;
-GRANT SELECT ON Director TO reg_use;
-GRANT SELECT ON Actor TO reg_use;
-GRANT SELECT ON Genre TO reg_use;
-GRANT SELECT ON Type TO reg_use;
-GRANT INSERT, UPDATE, DELETE ON Transactionu TO reg_use;
-
---
---DROP user app_admin;
 --DROP user cont_man;
---DROP user Sub_Man;
 --DROP user tran_man;
 --DROP user reg_use;
 
