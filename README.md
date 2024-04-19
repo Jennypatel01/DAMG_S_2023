@@ -19,21 +19,13 @@ GRANT GRANT ANY OBJECT PRIVILEGE TO app_admin;
 GRANT SELECT ANY TABLE TO app_admin;
 
 
-Step 2. 
-Run Project-DML_DDL.sql in app_admin
-
-
-Step 3. 
-For Inserting USERS, Copy and Paste the proj_roles.sql file into the app_admin file and then make users accordingly.
-
+Step 2. For insert different roles, run the code below.
 --user
 CREATE USER reg_use IDENTIFIED BY Jennpateu150102#;
 GRANT CREATE SESSION TO reg_use;
 ALTER USER reg_use DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
 ALTER USER reg_use TEMPORARY TABLESPACE TEMP;
 GRANT CONNECT TO reg_use;
-
-
 
 --Transaction_manager_user
 CREATE USER tran_man IDENTIFIED BY Jennpatetm150102#;
@@ -42,11 +34,14 @@ ALTER USER tran_man DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
 ALTER USER tran_man TEMPORARY TABLESPACE TEMP;
 GRANT CONNECT TO tran_man;
 
-
-
 --Content_Manager
 CREATE USER cont_man IDENTIFIED BY Jennpatecm150102#;
 GRANT CREATE SESSION TO cont_man;
 ALTER USER cont_man DEFAULT TABLESPACE users QUOTA UNLIMITED ON users;
 ALTER USER cont_man TEMPORARY TABLESPACE TEMP;
 GRANT CONNECT TO cont_man;
+Run Project-DML_DDL.sql in app_admin
+
+
+Step 3. Run file Project-DML_DDL_.sql in app_admin; Delete /* */ at the front for grant permisson to roles.
+
