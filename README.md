@@ -43,5 +43,5 @@ GRANT CONNECT TO cont_man;
 Run Project-DML_DDL.sql in app_admin
 
 
-Step 3. Run file Project-DML_DDL_.sql in app_admin; Delete /* */ at the front for grant permisson to roles.
+Step 3. Run file app_admin_project.sql in app_admin;
 
